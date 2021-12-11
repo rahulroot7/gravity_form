@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+#que {
+  display: none;
+}
+
+button {
+  background-color: #04AA6D;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+        var inputValue = $(this).attr('name');
+        // alert(inputValue)
+        switch (inputValue )
+        {
+        case 'first':
+          $('.tab2').show();
+          $('.tab1').hide();
+          $('.tab3').hide();
+          $('.tab4').hide();
+          $('.tab5').hide();
+          $('.tab6').hide();
+          $('.tab7').hide();
+          $('.tab8').hide();
+          $('.tab9').hide();
+          break;
+        case 'second':
+          $('.tab3').show();
+          $('.tab1').hide();
+          $('.tab2').hide();
+          $('.tab4').hide();
+          $('.tab5').hide();
+          $('.tab6').hide();
+          $('.tab7').hide();
+          $('.tab8').hide();
+          $('.tab9').hide();
+          break;
+        case 'third':
+          $('.tab4').show();
+          $('.tab1').hide();
+          $('.tab3').hide();
+          $('.tab2').hide();
+          $('.tab5').hide();
+          $('.tab6').hide();
+          $('.tab7').hide();
+          $('.tab8').hide();
+          $('.tab9').hide();
+          break;
+        case 'four':
+          $('.tab5').show();
+          $('.tab1').hide();
+          $('.tab3').hide();
+          $('.tab4').hide();
+          $('.tab2').hide();
+          $('.tab6').hide();
+          $('.tab7').hide();
+          $('.tab8').hide();
+          $('.tab9').hide();
+          break;
+        case 'five':
+          $('.tab6').show();
+          $('.tab1').hide();
+          $('.tab3').hide();
+          $('.tab4').hide();
+          $('.tab2').hide();
+          $('.tab5').hide();
+          $('.tab7').hide();
+          $('.tab8').hide();
+          $('.tab9').hide();
+          break;
+        default:
+
+        }
+        // $(".box").not(targetBox).hide();
+        // $(targetBox).show();
+    });
+});
+</script>
+<body>
+
+<form id="regForm" action="/action_page.php">
+  <!-- One "tab" for each step in the form: -->
+  <div class="box tab1">Name:
+  <h1>Question 1:</h1>
+    <p><input type="radio" name="first" class="first" value="1">1</p>
+    <p><input type="radio" name="first" class="first" value="2">1</p>
+    <p><input type="radio" name="first" class="first" value="3">3</p>
+    <p><input type="radio" name="first" class="first" value="4">4</p>
+  </div>
+  <div class="box tab2" id="que">Contact Info:
+  <h1>Question 2:</h1>
+    <p><input type="radio" name="second" class="second" value="1">1</p>
+    <p><input type="radio" name="second" class="second" value="2">1</p>
+    <p><input type="radio" name="second" class="second" value="3">3</p>
+    <p><input type="radio" name="second" class="second" value="4">4</p>
+  </div>
+  <div class="box tab3" id="que">Birthday:
+  <h1>Question 3:</h1>
+    <p><input type="radio" name="third" class="third" value="1">1</p>
+    <p><input type="radio" name="third" class="third" value="2">1</p>
+    <p><input type="radio" name="third" class="third" value="3">3</p>
+    <p><input type="radio" name="third" class="third" value="4">4</p>
+  </div>
+  <div class="tab4" id="que">Login Info:
+  <h1>Question 4:</h1>
+    <p><input type="radio" name="four" value="1">1</p>
+    <p><input type="radio" name="four" value="2">1</p>
+    <p><input type="radio" name="four" value="3">3</p>
+    <p><input type="radio" name="four" value="4">4</p>
+  </div>
+  <div class="tab5" id="que">Name:
+  <h1>Question 5:</h1>
+    <p><input type="radio" name="five" value="1">1</p>
+    <p><input type="radio" name="five" value="2">1</p>
+    <p><input type="radio" name="five" value="3">3</p>
+    <p><input type="radio" name="five" value="4">4</p>
+  </div>
+  <div class="tab6" id="que">Contact Info:
+  <h1>Question 6:</h1>
+    <p><input type="radio" name="six" value="1">1</p>
+    <p><input type="radio" name="six" value="2">1</p>
+    <p><input type="radio" name="six" value="3">3</p>
+    <p><input type="radio" name="six" value="4">4</p>
+  </div>
+  <!-- 
+  
+  <div class="tab7" id="que">Birthday:
+  <h1>Question 7:</h1>
+    <p><input type="radio" name="first" value="1">1</p>
+    <p><input type="radio" name="first" value="2">1</p>
+    <p><input type="radio" name="first" value="3">3</p>
+    <p><input type="radio" name="first" value="4">4</p>
+  </div>
+  <div class="tab8" id="que">Login Info:
+  <h1>Question 8:</h1>
+    <p><input type="radio" name="first" value="1">1</p>
+    <p><input type="radio" name="first" value="2">1</p>
+    <p><input type="radio" name="first" value="3">3</p>
+    <p><input type="radio" name="first" value="4">4</p>
+  </div>
+  <div class="tab9" id="que">Login Info:
+  <h1>Question 9:</h1>
+    <p><input type="radio" name="first" value="1">1</p>
+    <p><input type="radio" name="first" value="2">1</p>
+    <p><input type="radio" name="first" value="3">3</p>
+    <p><input type="radio" name="first" value="4">4</p>
+  </div> -->
+
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+</form>
+
+</body>
+</html>
